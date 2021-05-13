@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">  
+  <head>
+    <title>BMO Bil site</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<style>
+
+
+    .open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+  }
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #0078fe;
+  z-index: 9999;
+}
+
+/* Header */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+  background-color: #0078fe;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li button:hover {
+  background-color: blue;
+}
+
+.active {
+  background-color:white;
+}
+
+</style>
+
+  </head>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+    integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+    integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+    crossorigin="anonymous"
+  ></script>
+
+  <body>
+
+
+
+<button class="open-button" onclick="openBot()">Chat</button>
+
+<div class="chat-popup" id="chatbot">
+    <ul>
+        <li>BMO Chatbot</li>
+        <li style="float:right"><button class="active" onclick="closeBot()" ><large>-</strong></large></li>
+    </ul>
+    <iframe name="reload"
+      src=""
+      style="
+        width: 380px;
+        height: 420px;
+        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+        border-radius: 5px;
+        overflow: hidden;
+        border: none;">
+    </iframe>
+</div>
+
+<script>
+
+var firstLoad = true;
+
+
+function openBot() {
+    if( firstLoad === true ){
+    var ifr = document.getElementsByName('reload')[0];
+    var lang = document.documentElement.lang;
+    var srcURL = "http://localhost:4200/chatbot/"+lang;
+    ifr.src = srcURL;
+    firstLoad = false;
+    }
+  document.getElementById("chatbot").style.display = "block";
+}
+
+function closeBot() {
+  document.getElementById("chatbot").style.display = "none";
+}
+
+
+
+(function(){
+var lang = document.documentElement.lang;
+var srcURL = "http://localhost:4200/chatbot/"+lang;
+console.log("lang & SRC", lang, srcURL);
+var ifr = document.getElementsByName('reload')[0];
+    ifr.src = srcURL;
+    console.log("srcURL", ifr.src);
+})();
+</script>
+</body>
+</html>
