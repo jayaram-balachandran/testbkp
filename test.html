@@ -1,0 +1,52 @@
+<!-- <nav class="navbar navbar-dark bg-primary sticky-top">
+    <a class="navbar-brand pad" href="#">
+      BMO Chatbot
+    </a>
+</nav> -->
+<htl-hatool [content]="content"></htl-hatool>
+
+<div *ngIf="showForm" class="chatBackground">
+  <form #userForm="ngForm" novalidate (ngSubmit)="saveUser()">
+    <div class="form-floating wid71">
+      <input
+        type="text"
+        class="form-control noBorder"
+        id="firstName"
+        placeholder="first name"
+      />
+      <label for="firstName">First Name*</label>
+    </div>
+
+    <div class="form-floating wid70">
+      <input
+        type="text"
+        class="form-control noBorder"
+        id="lastName"
+        placeholder="last name"
+      />
+      <label for="lastName">Last Name*</label>
+    </div>
+
+    <div class="form-floating wid70">
+      <input
+        type="email"
+        class="form-control noBorder"
+        id="email"
+        placeholder="name@example.com"
+      />
+      <label for="email">Email Address*</label>
+    </div>
+
+    <div class="form-floating wid70">
+      <input
+        type="text"
+        class="form-control noBorder"
+        id="phone"
+        placeholder="+1 9876543210"
+      />
+      <label for="phone">Phone number*</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
