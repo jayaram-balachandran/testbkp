@@ -1,0 +1,31 @@
+.pageWidth {
+  width: 400px;
+  background-color: rgb(220, 231, 243);
+}
+
+.chatBackground {
+  background-color: rgb(220, 231, 243);
+}
+
+.noBorder {
+  border: none;
+  border-radius: 10px;
+}
+
+.wid71 {
+  width: 57%;
+  margin-left: 130px;
+  padding-bottom: 9px;
+}
+
+.wid70 {
+  width: 57%;
+  margin-left: 130px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+.btnMargin {
+  margin-top: 3px;
+  margin-bottom: 2px;
+}
