@@ -1,0 +1,1871 @@
+{
+  "s": [
+    {
+      "description": "This is a sample for hatool's scripting engine, used to demonstrate some of its features",
+      "name": "Sample Hatool script",
+      "snippets": [
+        {
+          "name": "default",
+          "steps": [
+            {
+              "say": "Hi, I'm the Online Investing Virtual Assistant, I can help you with your online investing questions.",
+              "uid": "1b0add0a99"
+            },
+            {
+              "say": "Are you new to online Investing with BMO or do you have an account with us?",
+              "uid": "f5d75bb67d"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "ef2dc95638"
+            },
+            {
+              "uid": "91fc4b3424",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'm new to online investing with BMO",
+                    "value": "Q1A1"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I have an existing online investing account",
+                    "value": "Q1A2"
+                  }
+                ],
+                "variable": "Q1"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q1",
+                "cases": [
+                  {
+                    "match": "Q1A1",
+                    "steps": [
+                      {
+                        "goto": "Q2A1Options",
+                        "uid": "1652339aa4"
+                      }
+                    ],
+                    "uid": "26e9524b1a"
+                  },
+                  {
+                    "match": "Q1A2",
+                    "steps": [
+                      {
+                        "say": "Thank you! Please dial 18887766886 for more information about service.",
+                        "uid": "ef8d364018"
+                      }
+                    ],
+                    "uid": "55fa6bf05e"
+                  }
+                ]
+              },
+              "uid": "adb7da866f"
+            }
+          ],
+          "uid": "397b17614b"
+        },
+        {
+          "name": "Q1A1Options",
+          "steps": [
+            {
+              "say": "I can help you with lots of online investing queries - Can you tell me more about what you're looking for ?",
+              "uid": "4c985391d5"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "e332a9be90"
+            },
+            {
+              "uid": "ea1ef04960",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "I have question about a new account",
+                    "value": "Q2A1"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I have a general question about online Investing",
+                    "value": "Q2A2"
+                  }
+                ],
+                "variable": "Q2"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q2",
+                "cases": [
+                  {
+                    "match": "Q2A1",
+                    "steps": [
+                      {
+                        "goto": "Q3A1Options",
+                        "uid": "2e84cd8363"
+                      }
+                    ],
+                    "uid": "485664e192"
+                  },
+                  {
+                    "match": "Q2A2",
+                    "steps": [
+                      {
+                        "goto": "Q3A2Options",
+                        "uid": "73277549eb"
+                      }
+                    ],
+                    "uid": "57a479f3a0"
+                  }
+                ]
+              },
+              "uid": "6a7a4830fb"
+            }
+          ],
+          "uid": "f5e79ccbc3"
+        },
+        {
+          "name": "Q2A1Options",
+          "steps": [
+            {
+              "say": "How can I help you today?",
+              "uid": "929f4ad7db"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "02ab39c2cc"
+            },
+            {
+              "uid": "c95b6cd289",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "I have question about a new account",
+                    "value": "Q3A1"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I have a general question about online Investing",
+                    "value": "Q3A2"
+                  }
+                ],
+                "variable": "Q3"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q3",
+                "cases": [
+                  {
+                    "match": "Q3A1",
+                    "steps": [
+                      {
+                        "goto": "Q3A1Options",
+                        "uid": "96765330b6"
+                      }
+                    ],
+                    "uid": "5b3f665b1d"
+                  },
+                  {
+                    "match": "Q3A2",
+                    "steps": [
+                      {
+                        "goto": "Q3A2Options",
+                        "uid": "a27d499d80"
+                      }
+                    ],
+                    "uid": "3647f7b2d6"
+                  }
+                ]
+              },
+              "uid": "ad19d5a628"
+            }
+          ],
+          "uid": "e036dfdbad"
+        },
+        {
+          "name": "Q3A2Options",
+          "steps": [
+            {
+              "say": "Great, what would you like to ask about?",
+              "uid": "007610d9ee"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "f42077d406"
+            },
+            {
+              "uid": "051fd94861",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to learn more about InvestorLine",
+                    "value": "Q4A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to learn more about Online Investing",
+                    "value": "Q4A2"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I'd like to know more about your current promotions",
+                    "value": "Q4A3"
+                  }
+                ],
+                "variable": "Q4"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q4",
+                "cases": [
+                  {
+                    "match": "Q4A1",
+                    "steps": [
+                      {
+                        "goto": "Q4A1Options",
+                        "uid": "0945cf30c0"
+                      }
+                    ],
+                    "uid": "5f4515ef4a"
+                  },
+                  {
+                    "match": "Q4A2",
+                    "steps": [
+                      {
+                        "goto": "Q4A2Options",
+                        "uid": "217128b2fb"
+                      }
+                    ],
+                    "uid": "ee54ae607b"
+                  },
+                  {
+                    "match": "Q4A3",
+                    "steps": [
+                      {
+                        "goto": "Q4A3Options",
+                        "uid": "7ea498bcfd"
+                      }
+                    ],
+                    "uid": "e036cabcbe"
+                  }
+                ]
+              },
+              "uid": "77d90a4fce"
+            }
+          ],
+          "uid": "d1f1f5c70d"
+        },
+        {
+          "name": "Q4A1Options",
+          "steps": [
+            {
+              "say": "Happy to help. BMO InvestorLine online investing services offer independent investors excellent service and fast trade execution for a wide range of investments. Our competitive rates and professional level tools are designed to give you easy access to online investing.",
+              "uid": "e0555444d7"
+            },
+            {
+              "say": "Would you like to learn more about online investing at BMO?",
+              "uid": "4ff7c23af6"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "374b7a5ae4"
+            },
+            {
+              "uid": "7603a4b380",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "Yes[Go to Online Investing Homepage]",
+                    "value": "Q5A1"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "What else can you help me with ?",
+                    "value": "Q5A2"
+                  }
+                ],
+                "variable": "Q5"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q5",
+                "cases": [
+                  {
+                    "match": "Q5A2",
+                    "steps": [
+                      {
+                        "goto": "Q1A1Options",
+                        "uid": "bad4be108a"
+                      }
+                    ],
+                    "uid": "64ef170121"
+                  }
+                ]
+              },
+              "uid": "3df44868fb"
+            }
+          ],
+          "uid": "7633275487"
+        },
+        {
+          "name": "Q4A2Options",
+          "steps": [
+            {
+              "say": "I can help you with that. What are you looking to learn?",
+              "uid": "2db58568cf"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "98b4d3d711"
+            },
+            {
+              "uid": "3cf8621db4",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to learn more about your online Investing platforms",
+                    "value": "Q6A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to talk to someone about online investing at BMO",
+                    "value": "Q6A2"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I'd like to learn more about investing online <a  href=\"#\" target=\"_parent\">LEARN MORE</a>",
+                    "value": "Q6A3"
+                  }
+                ],
+                "variable": "Q6"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q6",
+                "cases": [
+                  {
+                    "match": "Q6A1",
+                    "steps": [
+                      {
+                        "goto": "Q6A1Options",
+                        "uid": "d142ab36fe"
+                      }
+                    ],
+                    "uid": "666b1d1e17"
+                  },
+                  {
+                    "match": "Q6A2",
+                    "steps": [
+                      {
+                        "goto": "Q6A2Options",
+                        "uid": "971b32d715"
+                      }
+                    ],
+                    "uid": "8a63fc7089"
+                  }
+                ]
+              },
+              "uid": "40de3793d9"
+            }
+          ],
+          "uid": "fbbd52a124"
+        },
+        {
+          "name": "Q4A3Options",
+          "steps": [
+            {
+              "say": "I can help you with that",
+              "uid": "faa8e63ead"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "06cfc6ce1d"
+            },
+            {
+              "uid": "9a6ac75fa7",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "Self Directed:- Earn xxx with promo code yyy <p><a href=\"https://www.bmo.com/main/personal/investments/online-investing/investorline/self-directed/\" target=\"_parent\">LEARN MORE</a></p>",
+                    "value": "Q7A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "adviceDirect:- Earn xxx with promo code yyy <p><a href=\"https://www.bmo.com/main/personal/investments/online-investing/investorline/advicedirect\" target=\"_parent\">LEARN MORE</a></p>",
+                    "value": "Q7A2"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "Smartfolio:- Earn xxx with promo code yyy <p><a href=\"https://www.bmo.com/main/personal/investments/online-investing/smartfolio\" target=\"_parent\">LEARN MORE</a></p>",
+                    "value": "Q7A3"
+                  }
+                ],
+                "variable": "Q7"
+              }
+            }
+          ],
+          "uid": "68edf2581f"
+        },
+        {
+          "name": "Q3A1Options",
+          "steps": [
+            {
+              "say": "Great, can you tell me a little bit more about what you're looking for?",
+              "uid": "489f58234a"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "bec498e3f4"
+            },
+            {
+              "uid": "c7903ce1dd",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to open a new account",
+                    "value": "Q8A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to transfer funds from another institution",
+                    "value": "Q8A2"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to get a platform demo",
+                    "value": "Q8A3"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I need help choosing the right platform",
+                    "value": "Q8A4"
+                  }
+                ],
+                "variable": "Q8"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q8",
+                "cases": [
+                  {
+                    "match": "Q8A1",
+                    "steps": [
+                      {
+                        "goto": "Q8A1Options",
+                        "uid": "37b79c0103"
+                      }
+                    ],
+                    "uid": "2fcd0daffb"
+                  },
+                  {
+                    "match": "Q8A2",
+                    "steps": [
+                      {
+                        "goto": "Q8A2Options",
+                        "uid": "5fa87b27f3"
+                      }
+                    ],
+                    "uid": "85191b256f"
+                  },
+                  {
+                    "match": "Q8A3",
+                    "steps": [
+                      {
+                        "goto": "Q8A3Options",
+                        "uid": "8f7eb73de5"
+                      }
+                    ],
+                    "uid": "a2c4cf5ec8"
+                  },
+                  {
+                    "match": "Q8A4",
+                    "steps": [
+                      {
+                        "goto": "Q9A4Options",
+                        "uid": "37afe3490a"
+                      }
+                    ],
+                    "uid": "48d842421e"
+                  }
+                ]
+              },
+              "uid": "bfdd59a532"
+            }
+          ],
+          "uid": "c0675d50f1"
+        },
+        {
+          "name": "Q8A1Options",
+          "steps": [
+            {
+              "say": "I'm happy to hear that - what platform would you like to open",
+              "uid": "32e44762a3"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "c3f68d9e64"
+            },
+            {
+              "uid": "a4495797c7",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "adviceDirect (Please note, adviceDirect requires a minimum deposit of $50,000)",
+                    "value": "Q9A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "Self-Directed (There's no minimum balance to open a Self-Directed account)",
+                    "value": "Q9A2"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "SmartFolio (Please note, SmartFolio requires a minimum deposit of $1,000)",
+                    "value": "Q9A3"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I'm not sure yet",
+                    "value": "Q9A4"
+                  }
+                ],
+                "variable": "Q9"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q9",
+                "cases": [
+                  {
+                    "match": "Q9A1",
+                    "steps": [
+                      {
+                        "goto": "Q9A1Options",
+                        "uid": "65bcfc9cfc"
+                      }
+                    ],
+                    "uid": "59717287fa"
+                  },
+                  {
+                    "match": "Q9A2",
+                    "steps": [
+                      {
+                        "goto": "Q9A2Options",
+                        "uid": "a9a7ee460f"
+                      }
+                    ],
+                    "uid": "f8b418315e"
+                  },
+                  {
+                    "match": "Q9A3",
+                    "steps": [
+                      {
+                        "goto": "Q9A3Options",
+                        "uid": "1a7341b0ee"
+                      }
+                    ],
+                    "uid": "5cc364dc03"
+                  },
+                  {
+                    "match": "Q9A4",
+                    "steps": [
+                      {
+                        "goto": "Q9A4Options",
+                        "uid": "2e051abe62"
+                      }
+                    ],
+                    "uid": "477f9958b6"
+                  }
+                ]
+              },
+              "uid": "ab4d83cab3"
+            }
+          ],
+          "uid": "b709a96166"
+        },
+        {
+          "name": "Q8A2Options",
+          "steps": [
+            {
+              "say": "What account are you looking to transfer funds to",
+              "uid": "05ef083e4c"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "a829e702ff"
+            },
+            {
+              "uid": "07772ad58e",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "adviceDirect (Please note, adviceDirect requires a minimum deposit of $50,000)",
+                    "value": "Q10A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "Self-Directed (There's no minimum balance to open a Self-Directed account)",
+                    "value": "Q10A2"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "SmartFolio (Please note, SmartFolio requires a minimum deposit of $1,000)",
+                    "value": "Q10A3"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I'm not sure yet",
+                    "value": "Q10A4"
+                  }
+                ],
+                "variable": "Q10"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q10",
+                "cases": [
+                  {
+                    "match": "Q10A1",
+                    "steps": [
+                      {
+                        "goto": "Q9A1Options",
+                        "uid": "bcb1ff029b"
+                      }
+                    ],
+                    "uid": "94807939cf"
+                  },
+                  {
+                    "match": "Q10A2",
+                    "steps": [
+                      {
+                        "goto": "Q9A2Options",
+                        "uid": "ecfc962e35"
+                      }
+                    ],
+                    "uid": "2e43847b9a"
+                  },
+                  {
+                    "match": "Q10A3",
+                    "steps": [
+                      {
+                        "goto": "Q9A3Options",
+                        "uid": "137474792c"
+                      }
+                    ],
+                    "uid": "1ec411aca5"
+                  },
+                  {
+                    "match": "Q10A4",
+                    "steps": [
+                      {
+                        "goto": "Q9A4Options",
+                        "uid": "0da5ce743c"
+                      }
+                    ],
+                    "uid": "bd81ae6142"
+                  }
+                ]
+              },
+              "uid": "7a5919881e"
+            }
+          ],
+          "uid": "7fd206115c"
+        },
+        {
+          "name": "Q8A3Options",
+          "steps": [
+            {
+              "say": "Which platform would you like to see?",
+              "uid": "91c08d4e39"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "ec0c7e6b9a"
+            },
+            {
+              "uid": "68f08ca57e",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "adviceDirect (Please note, adviceDirect requires a minimum deposit of $50,000)",
+                    "value": "Q11A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "Self-Directed (There's no minimum balance to open a Self-Directed account)",
+                    "value": "Q11A2"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "SmartFolio (Please note, SmartFolio requires a minimum deposit of $1,000)",
+                    "value": "Q11A3"
+                  }
+                ],
+                "variable": "Q11"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q11",
+                "cases": [
+                  {
+                    "match": "Q11A1",
+                    "steps": [
+                      {
+                        "say": "advice Direct Demo",
+                        "uid": "81b84759d1"
+                      }
+                    ],
+                    "uid": "e2b5341ae3"
+                  },
+                  {
+                    "match": "Q11A2",
+                    "steps": [
+                      {
+                        "say": "Self-Direct Demo",
+                        "uid": "43bf4fd468"
+                      }
+                    ],
+                    "uid": "758b0763df"
+                  },
+                  {
+                    "match": "Q11A3",
+                    "steps": [
+                      {
+                        "say": "Smart Folio Demo",
+                        "uid": "984757d685"
+                      }
+                    ],
+                    "uid": "8500ad9a4c"
+                  }
+                ]
+              },
+              "uid": "4e712caa7c"
+            }
+          ],
+          "uid": "e91f830653"
+        },
+        {
+          "name": "Q9A1Options",
+          "steps": [
+            {
+              "say": "Would you like to speak to someone immediately to discuss opening an account?",
+              "uid": "9a3838fc1b"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "67efd251d8"
+            },
+            {
+              "uid": "1a0dfd322e",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "Yes!",
+                    "value": "Q12A3"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "No, schedule a call for later",
+                    "value": "Q12A2"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I'd like to learn more about adviceDirect First",
+                    "value": "Q12A1"
+                  }
+                ],
+                "variable": "Q12"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q12",
+                "cases": [
+                  {
+                    "match": "Q12A1",
+                    "steps": [
+                      {
+                        "goto": "Q12A1Options",
+                        "uid": "5182efe43d"
+                      }
+                    ],
+                    "uid": "46938babe6"
+                  },
+                  {
+                    "match": "Q12A2",
+                    "steps": [
+                      {
+                        "say": "Let's find a time that works for you <a class=\"aquestion\" href=\"https://www.bmo.com/main/personal/investments/online-investing/investorline/advicedirect/let-us-contact-you/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "412606061e"
+                      }
+                    ],
+                    "uid": "81f3cce290"
+                  },
+                  {
+                    "match": "Q12A3",
+                    "steps": [
+                      {
+                        "goto": "Q12A3Options",
+                        "uid": "27989c5e46"
+                      }
+                    ],
+                    "uid": "b35d457e9e"
+                  }
+                ]
+              },
+              "uid": "e0cc015e96"
+            }
+          ],
+          "uid": "a25a505dfc"
+        },
+        {
+          "name": "Q9A2Options",
+          "steps": [
+            {
+              "say": "Customers with over $250,000 in investible assets are eligible for the 5 Star program. Do you qualify?",
+              "uid": "83151dc9e0"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "419febd8f1"
+            },
+            {
+              "uid": "4cdac04ecc",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "Yes, I do",
+                    "value": "Q13A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "No, I don't currently qualify",
+                    "value": "Q13A2"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I'd like to learn about the 5 Star program",
+                    "value": "Q13A3"
+                  }
+                ],
+                "variable": "Q13"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q13",
+                "cases": [
+                  {
+                    "match": "Q13A1",
+                    "steps": [
+                      {
+                        "goto": "Q12A3Options",
+                        "uid": "01f88f9fde"
+                      }
+                    ],
+                    "uid": "76240a85dd"
+                  },
+                  {
+                    "match": "Q13A2",
+                    "steps": [
+                      {
+                        "goto": "Q13A2Options",
+                        "uid": "6fe1c00ed9"
+                      }
+                    ],
+                    "uid": "2b663581d9"
+                  },
+                  {
+                    "match": "Q13A3",
+                    "steps": [
+                      {
+                        "goto": "Q13A3Options",
+                        "uid": "46f9fd168e"
+                      }
+                    ],
+                    "uid": "2000f11e52"
+                  }
+                ]
+              },
+              "uid": "7816b23ae8"
+            }
+          ],
+          "uid": "0ead7a807d"
+        },
+        {
+          "name": "Q9A353Options",
+          "steps": [
+            {
+              "say": "Seems like SmartFolio would be a great fit for you. Would you like to apply now?",
+              "uid": "b0c017d1ed"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "d9937f746a"
+            },
+            {
+              "uid": "a187dc7786",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to find more and start an online application",
+                    "value": "Q14A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to talk to someone about SmartFolio",
+                    "value": "Q14A2"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to schedule a call for a later time",
+                    "value": "Q14A3"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I'd like to learn more about SmartFolio first",
+                    "value": "Q14A4"
+                  }
+                ],
+                "variable": "Q14"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q14",
+                "cases": [
+                  {
+                    "match": "Q14A1",
+                    "steps": [
+                      {
+                        "say": "Sure, I can take you there <a class=\"aquestion\" href=\"https://bmosmartfolio.com/client/#/onboarding/personal-profile/name\" target=\"_parent\">Start my Application</a>",
+                        "uid": "b0894cf581"
+                      }
+                    ],
+                    "uid": "03f97c4e26"
+                  },
+                  {
+                    "match": "Q14A2",
+                    "steps": [
+                      {
+                        "say": "I can help you with that. You can call <a>1-844-895-3721</a> to speak with someone about a SmartFolio account.",
+                        "uid": "74370b2e68"
+                      }
+                    ],
+                    "uid": "03e93c005a"
+                  },
+                  {
+                    "match": "Q14A3",
+                    "steps": [
+                      {
+                        "say": "I can help you with that, let's find a time that works for you. <a class=\"aquestion\" href=\"https://bmo.com/main/personal/investments/online-investing/smartffolio/let-us-contact-you/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "dce8914b49"
+                      }
+                    ],
+                    "uid": "ff9a5c4664"
+                  },
+                  {
+                    "match": "Q14A4",
+                    "steps": [
+                      {
+                        "goto": "Q14A4Options",
+                        "uid": "acb2f796b0"
+                      }
+                    ],
+                    "uid": "24d7fbe9e2"
+                  }
+                ]
+              },
+              "uid": "329720932a"
+            }
+          ],
+          "uid": "b59dfb7421"
+        },
+        {
+          "name": "Q9A4Options",
+          "steps": [
+            {
+              "say": "Let me help you find what you're looking for - which of these statements describe your investment style?",
+              "uid": "f428eecfab"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "2c3c7fc5de"
+            },
+            {
+              "uid": "fc472a8a09",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "I want to manage my own account with the help of an advisor and portfolio monitoring",
+                    "value": "Q15A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I want to manage my own account with professional level tools and resources",
+                    "value": "Q15A2"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I want to fund an account, but leave my portfolio management to the professionals",
+                    "value": "Q15A3"
+                  }
+                ],
+                "variable": "Q15"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q15",
+                "cases": [
+                  {
+                    "match": "Q15A1",
+                    "steps": [
+                      {
+                        "say": "Sounds like adviceDirect could be a good fit for you.",
+                        "uid": "7a4cf72883"
+                      },
+                      {
+                        "goto": "Q9A1Options",
+                        "uid": "d08365eb91"
+                      }
+                    ],
+                    "uid": "0364af9936"
+                  },
+                  {
+                    "match": "Q15A2",
+                    "steps": [
+                      {
+                        "say": "It looks like you're looking for a Self-Directed account",
+                        "uid": "0eb3270326"
+                      },
+                      {
+                        "goto": "Q9A2Options",
+                        "uid": "d011d4440b"
+                      }
+                    ],
+                    "uid": "82571d4665"
+                  },
+                  {
+                    "match": "Q15A3",
+                    "steps": [
+                      {
+                        "goto": "Q9A353Options",
+                        "uid": "ef19274cc7"
+                      }
+                    ],
+                    "uid": "535c4d1f22"
+                  }
+                ]
+              },
+              "uid": "c227af828e"
+            }
+          ],
+          "uid": "d1abb6f386"
+        },
+        {
+          "name": "Q12A1Options",
+          "steps": [
+            {
+              "say": "Is there something specific you'd like to learn about?",
+              "uid": "c5d806bade"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "8faf221431"
+            },
+            {
+              "uid": "9112852163",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to get an overview of the adviceDirect platform",
+                    "value": "Q16A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to learn more about how adviceDirect works",
+                    "value": "Q16A2"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to learn more about what adviceDirect costs",
+                    "value": "Q16A3"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to learn more about adviceDirect Premium",
+                    "value": "Q16A4"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I'd like to get a Portfolio Health Check",
+                    "value": "Q16A5"
+                  }
+                ],
+                "variable": "Q16"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q16",
+                "cases": [
+                  {
+                    "match": "Q16A1",
+                    "steps": [
+                      {
+                        "say": "I can help you with that <a class=\"aquestion\" href=\"https://www.bmo.com/main/personal/investments/online-investing/investorline/advicedirect/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "a91f55a384"
+                      }
+                    ],
+                    "uid": "18ced71b0d"
+                  },
+                  {
+                    "match": "Q16A2",
+                    "steps": [
+                      {
+                        "say": "I can help you with that <a class=\"aquestion\" href=\"https://www.bmo.com/main/personal/investments/online-investing/investorline/advicedirect/how-it-works/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "26d90f43a2"
+                      }
+                    ],
+                    "uid": "d5a2785efa"
+                  },
+                  {
+                    "match": "Q16A3",
+                    "steps": [
+                      {
+                        "say": "I can help you with that <a class=\"aquestion\" href=\"https://www.bmo.com/main/personal/investments/online-investing/investorline/advicedirect/pricing/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "219b339d20"
+                      }
+                    ],
+                    "uid": "ce9a084ed4"
+                  },
+                  {
+                    "match": "Q16A4",
+                    "steps": [
+                      {
+                        "say": "I can help you with that <a class=\"aquestion\" href=\"https://www.bmo.com/main/personal/investments/online-investing/investorline/advicedirect/premium/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "7ac7be9443"
+                      }
+                    ],
+                    "uid": "c0782363ee"
+                  },
+                  {
+                    "match": "Q16A5",
+                    "steps": [
+                      {
+                        "say": "I can help you with that <a class=\"aquestion\" href=\"https://www.bmo.com/main/personal/investments/online-investing/investorline/advicedirect/portfolio-health-check/#start\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "6ed35ccf4e"
+                      }
+                    ],
+                    "uid": "90b73f66f4"
+                  }
+                ]
+              },
+              "uid": "6b0854e754"
+            }
+          ],
+          "uid": "4640f27f53"
+        },
+        {
+          "name": "Q12A3Options",
+          "steps": [
+            {
+              "say": "We have a few options for you to talk to an associate right now, which would you prefer?",
+              "uid": "893578ca98"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "37d05fdbfe"
+            },
+            {
+              "uid": "1e66171f91",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "Start a live video chat now with an advisor.",
+                    "value": "Q17A1"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "<p>Call in to our sales line</p> <p>[aD] <a>1-888-766-6886</a></p> <p>[SD] <a>1-888-766-6886</a></p>",
+                    "value": "Q17A2"
+                  }
+                ],
+                "variable": "Q17"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q17",
+                "cases": [
+                  {
+                    "match": "Q17A1",
+                    "steps": [
+                      {
+                        "goto": "videoChat",
+                        "uid": "a73bf8dcac"
+                      }
+                    ],
+                    "uid": "0e452d546d"
+                  }
+                ]
+              },
+              "uid": "49fad0f022"
+            }
+          ],
+          "uid": "2a709e1a2c"
+        },
+        {
+          "name": "Q13A2Options",
+          "steps": [
+            {
+              "say": "Ok, here are a couple of options for you",
+              "uid": "b2eee62552"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "b4222d5a26"
+            },
+            {
+              "uid": "6fd5165b37",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to start my application",
+                    "value": "Q18A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to talk to someone about Self-Direct",
+                    "value": "Q18A2"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to schedule a call for a later time",
+                    "value": "Q18A3"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I'd like to learn more about Self-Directed first",
+                    "value": "Q18A4"
+                  }
+                ],
+                "variable": "Q18"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q18",
+                "cases": [
+                  {
+                    "match": "Q18A1",
+                    "steps": [
+                      {
+                        "say": "Sure, I can take you there <a class=\"aquestion\" href=\"https://wealth.bmo.com/wealth/onboard/onlineinvesting/#/select-account?lang=en\" target=\"_parent\">Start my Application</a>",
+                        "uid": "e445abe743"
+                      }
+                    ],
+                    "uid": "c4c4651725"
+                  },
+                  {
+                    "match": "Q18A2",
+                    "steps": [
+                      {
+                        "say": "I can help you with that. You can call <a>1-888-776-6886</a> to speak with someone about Self-Directed account",
+                        "uid": "0563228ff9"
+                      }
+                    ],
+                    "uid": "cc7d4db2c4"
+                  },
+                  {
+                    "match": "Q18A3",
+                    "steps": [
+                      {
+                        "say": "I can help you with that, let's find a time that works for you. <a class=\"aquestion\" href=\"https://bmo.com/main/personal/investments/online-investing/investorline/self-directed/let-us-contact-you/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "b7437f53d0"
+                      }
+                    ],
+                    "uid": "cc6d58a35c"
+                  },
+                  {
+                    "match": "Q18A4",
+                    "steps": [
+                      {
+                        "goto": "Q18A4Options",
+                        "uid": "e10b0b50e4"
+                      }
+                    ],
+                    "uid": "24f09bb149"
+                  }
+                ]
+              },
+              "uid": "4e1c5d2454"
+            }
+          ],
+          "uid": "6cd4485d5b"
+        },
+        {
+          "name": "Q18A4Options",
+          "steps": [
+            {
+              "say": "Is there some specific you would like to learn about?",
+              "uid": "09d71a8636"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "92a005af90"
+            },
+            {
+              "uid": "1fda7933b3",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to get an overview of the Self-Directed platform",
+                    "value": "Q19A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to learn more about the tools and research support offered by Self-Directed",
+                    "value": "Q19A2"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to learn more about how much Self-Directed costs",
+                    "value": "Q19A3"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I'd like to learn about the 5 Star program",
+                    "value": "Q19A4"
+                  }
+                ],
+                "variable": "Q19"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q19",
+                "cases": [
+                  {
+                    "match": "Q19A1",
+                    "steps": [
+                      {
+                        "say": "I can help you with that <a class=\"aquestion\" href=\"https://bmo.com/main/personal/investments/online-investing/investorline/self-directed/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "153ea5b8c4"
+                      }
+                    ],
+                    "uid": "4345d1ad85"
+                  },
+                  {
+                    "match": "Q19A2",
+                    "steps": [
+                      {
+                        "say": "I can help you with that <a class=\"aquestion\" href=\"https://bmo.com/main/personal/investments/online-investing/investorline/self-directed/tools-and-research/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "5a0080c064"
+                      }
+                    ],
+                    "uid": "2bf0a01d7c"
+                  },
+                  {
+                    "match": "Q19A3",
+                    "steps": [
+                      {
+                        "say": "I can help you with that <a class=\"aquestion\" href=\"https://bmo.com/main/personal/investments/online-investing/investorline/self-directed/pricing/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "7a0c2b7722"
+                      }
+                    ],
+                    "uid": "d48c9c169a"
+                  },
+                  {
+                    "match": "Q19A4",
+                    "steps": [
+                      {
+                        "goto": "Q13A3Options",
+                        "uid": "295ce966ee"
+                      }
+                    ],
+                    "uid": "37cb9bbd25"
+                  }
+                ]
+              },
+              "uid": "f4bcca0fcd"
+            }
+          ],
+          "uid": "b055ca8d28"
+        },
+        {
+          "name": "Q13A3Options",
+          "steps": [
+            {
+              "say": "Great, What would you like to ask about? Ramesh Confirmation Pending",
+              "uid": "74e0f7f2d0"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "10282fa9e5"
+            },
+            {
+              "uid": "f8296b0b49",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "I can help you with that <a  href=\"https://bmo.com/main/personal/investments/online-investing/investorline/self-directed/5-star-vip-program/\" target=\"_parent\">LEARN MORE</a>",
+                    "value": "Q20A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to talk to someone about the 5 Star program",
+                    "value": "Q20A2"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "Schedule a call for later <a  href=\"https://bmo.com/main/personal/investments/online-investing/investorline/self-directed/let-us-contact-you/\" target=\"_parent\">LEARN MORE</a>",
+                    "value": "Q20A3"
+                  }
+                ],
+                "variable": "Q20"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q20",
+                "cases": [
+                  {
+                    "match": "Q20A2",
+                    "steps": [
+                      {
+                        "goto": "Q12A3Options",
+                        "uid": "008bb6755c"
+                      }
+                    ],
+                    "uid": "c9047eca8d"
+                  }
+                ]
+              },
+              "uid": "fb9378ebf0"
+            }
+          ],
+          "uid": "3e356239e7"
+        },
+        {
+          "name": "Q14A4Options",
+          "steps": [
+            {
+              "say": "Is there some specific you would like to learn about?",
+              "uid": "d6ec6e7314"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "7283726660"
+            },
+            {
+              "uid": "09e604ecf9",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to get an overview of the SmartFolio platform",
+                    "value": "Q21A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to learn more about how SmartFolio works",
+                    "value": "Q21A2"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to learn more about how much SmartFolio costs",
+                    "value": "Q21A3"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I'd like to learn more about SmartFolio ETF portfolios",
+                    "value": "Q21A4"
+                  }
+                ],
+                "variable": "Q21"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q21",
+                "cases": [
+                  {
+                    "match": "Q21A1",
+                    "steps": [
+                      {
+                        "say": "I can help you with that <a class=\"aquestion\" href=\"https://bmo.com/main/personal/investments/online-investing/smartfolio/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "89c504edcb"
+                      }
+                    ],
+                    "uid": "444ae75abf"
+                  },
+                  {
+                    "match": "Q21A2",
+                    "steps": [
+                      {
+                        "say": "I can help you with that <a class=\"aquestion\" href=\"https://bmo.com/main/personal/investments/online-investing/smartfolio/how-it-works/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "e5d5e36cac"
+                      }
+                    ],
+                    "uid": "089e77b9ed"
+                  },
+                  {
+                    "match": "Q21A3",
+                    "steps": [
+                      {
+                        "say": "I can help you with that <a class=\"aquestion\" href=\"https://bmo.com/main/personal/investments/online-investing/smartfolio/pricing/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "641483e9d2"
+                      }
+                    ],
+                    "uid": "e59ba5877c"
+                  },
+                  {
+                    "match": "Q21A4",
+                    "steps": [
+                      {
+                        "say": "I can help you with that <a class=\"aquestion\" href=\"https://bmo.com/main/personal/investments/online-investing/smartfolio/etf-portfolios/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "08e47b7180"
+                      }
+                    ],
+                    "uid": "30c1c9780a"
+                  }
+                ]
+              },
+              "uid": "22febd24a8"
+            }
+          ],
+          "uid": "eef62fe89a"
+        },
+        {
+          "name": "videoChat",
+          "steps": [
+            {
+              "say": "Great, I'll just need some basic information from you. In case of any technical issues, we just want to know how we can reach you.",
+              "uid": "9b5ae0725c"
+            },
+            {
+              "do": {
+                "cmd": "show_form"
+              },
+              "uid": "0caaa8da9e"
+            }
+          ],
+          "uid": "fe2e037e83"
+        },
+        {
+          "name": "Q6A2Options",
+          "steps": [
+            {
+              "say": "Would you like to speak to someone immediately?",
+              "uid": "8fde8f45e2"
+            },
+            {
+              "uid": "bb91fbc97a",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "Yes!",
+                    "value": "Q22A1"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "No, schedule a call for later",
+                    "value": "Q22A2"
+                  }
+                ],
+                "variable": "Q22"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q22",
+                "cases": [
+                  {
+                    "match": "Q22A1",
+                    "steps": [
+                      {
+                        "goto": "Q12A3Options",
+                        "uid": "ec9cc325fa"
+                      }
+                    ],
+                    "uid": "ea17cc8f53"
+                  },
+                  {
+                    "match": "Q22A2",
+                    "steps": [
+                      {
+                        "say": "Let's find a time that works for you <a class=\"aquestion\" href=\"https://www.bmo.com/main/personal/investments/online-investing/investorline/advicedirect/let-us-contact-you/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "9e31b18b8b"
+                      }
+                    ],
+                    "uid": "77c6dd713f"
+                  }
+                ]
+              },
+              "uid": "486b51d9c6"
+            }
+          ],
+          "uid": "a0a9b4c0e7"
+        },
+        {
+          "name": "Q6A1Options",
+          "steps": [
+            {
+              "say": "Which platform would you like to learn more about?",
+              "uid": "28336ac80f"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "09de795080"
+            },
+            {
+              "uid": "1667ff13b6",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "adviceDirect (Please note, adviceDirect requires a minimum deposit of $50,000)",
+                    "value": "Q23A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "Self-Directed (There's no minimum balance to open a Self-Directed account)",
+                    "value": "Q23A2"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "SmartFolio (Please note, SmartFolio requires a minimum deposit of $1,000)",
+                    "value": "Q23A3"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I'm not sure yet",
+                    "value": "Q23A4"
+                  }
+                ],
+                "variable": "Q23"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q23",
+                "cases": [
+                  {
+                    "match": "Q23A1",
+                    "steps": [
+                      {
+                        "goto": "Q9A1Options",
+                        "uid": "a2af602e44"
+                      }
+                    ],
+                    "uid": "60b7a8811f"
+                  },
+                  {
+                    "match": "Q23A2",
+                    "steps": [
+                      {
+                        "goto": "Q9A2Options",
+                        "uid": "e4995380a7"
+                      }
+                    ],
+                    "uid": "dd37dc2cbe"
+                  },
+                  {
+                    "match": "Q23A3",
+                    "steps": [
+                      {
+                        "goto": "Q9A3Options",
+                        "uid": "b8df3f7503"
+                      }
+                    ],
+                    "uid": "cf3e8f9f32"
+                  },
+                  {
+                    "match": "Q23A4",
+                    "steps": [
+                      {
+                        "goto": "Q9A4Options",
+                        "uid": "5c6684286b"
+                      }
+                    ],
+                    "uid": "7d380f32c8"
+                  }
+                ]
+              },
+              "uid": "4c6871354d"
+            }
+          ],
+          "uid": "826ed2d995"
+        },
+        {
+          "name": "Q9A3Options",
+          "steps": [
+            {
+              "say": "Oh, here are a couple of options for you",
+              "uid": "3119a3de0d"
+            },
+            {
+              "do": {
+                "cmd": "scrollDown"
+              },
+              "uid": "58ada4a926"
+            },
+            {
+              "uid": "6c55437ecc",
+              "wait": {
+                "options": [
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to find more and start an online application",
+                    "value": "Q24A1"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to talk to someone about SmartFolio",
+                    "value": "Q24A2"
+                  },
+                  {
+                    "class": "marginTop-16",
+                    "show": "I'd like to schedule a call for a later time",
+                    "value": "Q24A3"
+                  },
+                  {
+                    "class": "marginTopBtm-16",
+                    "show": "I'd like to learn more about SmartFolio first",
+                    "value": "Q24A4"
+                  }
+                ],
+                "variable": "Q24"
+              }
+            },
+            {
+              "switch": {
+                "arg": "Q24",
+                "cases": [
+                  {
+                    "match": "Q24A1",
+                    "steps": [
+                      {
+                        "say": "Sure, I can take you there <a class=\"aquestion\" href=\"https://bmo.com/main/personal/investments/online-investing/smartfolio/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "0f01e8b32b"
+                      }
+                    ],
+                    "uid": "9c96489761"
+                  },
+                  {
+                    "match": "Q24A2",
+                    "steps": [
+                      {
+                        "say": "I can help you with that. You can call <a>1-844-895-3721</a> to speak with someone about a SmartFolio account.",
+                        "uid": "37c8d53fc9"
+                      }
+                    ],
+                    "uid": "1e674be302"
+                  },
+                  {
+                    "match": "Q24A3",
+                    "steps": [
+                      {
+                        "say": "I can help you with that, let's find a time that works for you. <a class=\"aquestion\" href=\"https://bmo.com/main/personal/investments/online-investing/smartffolio/let-us-contact-you/\" target=\"_parent\">LEARN MORE</a>",
+                        "uid": "7e3b2b0193"
+                      }
+                    ],
+                    "uid": "f6a49a04e3"
+                  },
+                  {
+                    "match": "Q24A4",
+                    "steps": [
+                      {
+                        "goto": "Q14A4Options",
+                        "uid": "c5caa83e2f"
+                      }
+                    ],
+                    "uid": "159f2a639b"
+                  }
+                ]
+              },
+              "uid": "4b3d683f79"
+            }
+          ],
+          "uid": "c1b142c929"
+        }
+      ]
+    }
+  ]
+}
