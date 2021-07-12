@@ -1,447 +1,225 @@
-import { Component, OnInit , AfterViewInit , ElementRef} from '@angular/core';
-
-@Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent implements OnInit , AfterViewInit{
-  name = 'Angular 5';
-  today: Date;
-  min: Date;
-  selectedDate: Date;
-  timeSlot = [
-    '09:00 AM',
-    '09:30 AM',
-    '10:00 AM',
-    '10:30 AM',
-    '11:00 AM',
-    '11:30 AM',
-    '12:00 PM',
-    '12:30 PM',
-    '01:00 PM',
-    '01:30 PM',
-    '02:00 PM',
-    '02:30 PM',
-    '03:00 PM',
-    '03:30 PM',
-    '04:00 PM',
-    '04:30 PM',
-    '05:00 PM'
-  ];
-  availableTimes = [
-    [
-      '09:00 AM',
-      '09:30 AM',
-      '11:30 AM',
-      '12:00 PM',
-      '12:30 PM',
-      '01:00 PM',
-      '01:30 PM',
-      '04:00 PM',
-      '04:30 PM',
-      '05:00 PM'
-    ],
-    [
-      '09:00 AM',
-      '09:30 AM',
-      '10:00 AM',
-      '12:30 PM',
-      '01:00 PM',
-      '01:30 PM',
-      '02:00 PM',
-      '02:30 PM',
-      '03:00 PM',
-      '04:30 PM',
-      '05:00 PM'
-    ],
-    [
-      '09:00 AM',
-      '09:30 AM',
-      '12:30 PM',
-      '01:00 PM',
-      '01:30 PM',
-      '03:00 PM',
-      '03:30 PM',
-      '04:00 PM',
-      '04:30 PM',
-      '05:00 PM'
-    ],
-    [
-      '10:30 AM',
-      '11:00 AM',
-      '11:30 AM',
-      '12:00 PM',
-      '12:30 PM',
-      '01:00 PM',
-      '01:30 PM',
-      '02:00 PM',
-      '02:30 PM',
-      '03:00 PM',
-      '04:30 PM',
-      '05:00 PM'
-    ],
-    [
-      '09:00 AM',
-      '09:30 AM',
-      '10:00 AM',
-      '11:30 AM',
-      '12:00 PM',
-      '12:30 PM',
-      '01:00 PM',
-      '01:30 PM',
-      '03:30 PM',
-      '04:00 PM',
-      '04:30 PM',
-      '05:00 PM'
-    ],
-    [
-      '09:00 AM',
-      '09:30 AM',
-      '10:00 AM',
-      '10:30 AM',
-      '11:30 AM',
-      '01:00 PM',
-      '01:30 PM',
-      '02:00 PM',
-      '02:30 PM',
-      '03:00 PM',
-      '03:30 PM',
-      '04:00 PM',
-      '04:30 PM',
-      '05:00 PM'
-    ],
-    [
-      '09:00 AM',
-      '09:30 AM',
-      '10:00 AM',
-      '11:00 AM',
-      '11:30 AM',
-      '12:00 PM',
-      '12:30 PM',
-      '01:00 PM',
-      '01:30 PM',
-      '03:30 PM',
-      '04:00 PM',
-      '04:30 PM',
-      '05:00 PM'
-    ]
-  ];
-  availableSlotAllDate: Object = {};
-  SelectedDateSlot = [];
-  selectedTime: string = '';
-  testDate = new Date();
-  offsetLocal = 0;
-  monthNames = [ "January" ,  "February", "March", "April", "May",  "June" , 
-                   "July" ,  "August", "September", "October", "November",  "December"]
+p {
+    font-family: Lato;
+  }
   
-  constructor(private elem: ElementRef) {}
-  ngOnInit() {
-    this.offsetLocal =  -(this.testDate.getTimezoneOffset()/60);
-   
-    this.today = new Date(
-      new Date().getFullYear(),
-      new Date().getMonth(),
-      new Date().getDate()
-    );
-
-    this.min = this.today;
-    this.selectedDate = this.today;
-    for (let i = 0; i < this.availableTimes.length; i++) {
-      let nextDay = new Date(this.today);
-      nextDay.setDate(this.today.getDate() + i);
-      const DateKey = 
-        nextDay.getFullYear() +
-        '-' +
-        nextDay.getMonth() +
-        '-' +
-        nextDay.getDate();
-      // console.log(nextDay);
-      this.availableSlotAllDate[DateKey] = this.availableTimes[i];
-     
-    }
-    this.ChangeDate(this.today , false);
-    console.log(this.availableSlotAllDate);
+  .timeSlotsBox {
+    pointer-events: none;
+    margin: 10px;
+    font-size: 18px;
+    width: 100px;
+    color: grey;
+    display: inline-flex;
   }
-  ngAfterViewInit(){
-    const label1 = "[aria-label= ";
-    const label2 =  this.monthNames[this.today.getMonth()]+' '
-                             +this.today.getDate()+', '+this.today.getFullYear();
-       const label3 = "]";
-       const ariaLabel = label1+'"'+label2+'"'+label3;
-    let elements = this.elem.nativeElement.querySelectorAll(ariaLabel);
-    console.log(elements);
-     elements[0].children[0].classList.add("today");
-    
+  .availableSlot {
+    color: blue;
+    pointer-events: auto;
+    cursor: pointer; 
   }
-  // convertToEST() {
-  //   //EST
-  //  let offset = -4.0
-
-  //  let clientDate = new Date();
-  //  let utc = clientDate.getTime() + (clientDate.getTimezoneOffset() * 60000);
-
-  //  let serverDate = new Date(utc + (3600000*offset));
-
-  //   console.log(serverDate);
-   
-  // }
-  ChangeDate(date , checked) {
-    this.checkedDate(this.selectedDate , checked);
-    this.selectedDate = date;
-    const selectedDateKey = this.selectedDate.getFullYear() +  '-' +
-                            this.selectedDate.getMonth() +  '-' + this.selectedDate.getDate();
-    this.SelectedDateSlot = this.availableSlotAllDate[selectedDateKey] ? this.availableSlotAllDate[selectedDateKey]  : [];
-    this.selectedTime = '';
+  .time {
+    margin: 5px 5px 5px 0;
+    position: relative;
+    left: 40%;
+    transform: translate(-50%);
   }
-checkedDate(date , checked) {
-  if(checked) {
-  const label1 = "[aria-label= ";
-  const label2 =  this.monthNames[this.selectedDate.getMonth()]+' '
-                           +this.selectedDate.getDate()+', '+this.selectedDate.getFullYear();
-     const label3 = "]";
-     const ariaLabel = label1+'"'+label2+'"'+label3;
-  let elements = this.elem.nativeElement.querySelectorAll(ariaLabel);
-   elements[0].children[0].classList.add("checkedDate");
   
-} 
-}
-  onSelecteSlot(time) {
-    this.selectedTime = time;
+  .selectedDate {
+    height: 35px;
+    text-align: center;
+    border-bottom: 1px solid gainsboro;
   }
-  weekendFilter = (d: Date): boolean => {
-    const day = d.getDay();
-    // disable Saturday and Sunday.
-    return day !== 0 && day !== 6;
-  };
-}
-
-
-
-
-
-
-
-
-
-=================
-
-
-
+  .selectedSlot , .availableSlot:hover{
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .am_pm {
+    font-size: 10px;
+    margin-left: 2px;
+    position: absolute;
+  }
+  
+  
+  
+  
+  
+  /* // bootstrap */
+  
+  input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid gainsboro;
+    color: blue;
+  }
+  select{
+       border: none;
+       border-bottom: 1px solid gainsboro;
+      color: blue;
+  }
+  
+  input:focus ,
+  select:focus{
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    border-bottom: 1px solid gainsboro;
+    color: blue;
+  }
+  label ,
+  select {
+    color: blue;
+  }
+   #userInfo .row .col-sm-6  {
+    padding: 10px;
+  }
+  .form-floating>span {
+   color: gray;
+  }
+  /* .form-select {
+    background-image: none;
+  } */
+  
+  
+  
+  
+  ===================================
+  
+  
+  
 
 
  <div class="container   mb-3">
-   <div class="text-center">
-  <h1>Virtual meeting calender booking</h1>
-  <p>Please select the date and time to book your meeting with one of our agents and fill out the form</p>
-   </div>
-   <br>
- <h2>What would you want to talk about</h2>
- <form class="mt-4">
-  <div  class="row">
-    <div  class="col-sm-8 form-floating">
-    <select  class="form-select" id="openAccount" aria-label="openAccount">
-      <option  selected>I want to open an account</option>
-      <option  value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <span>This question is pre-selected based on your previous input , but you can change it here</span>
+    <div class="text-center">
+   <h1>Virtual meeting calender booking</h1>
+   <p>Please select the date and time to book your meeting with one of our agents and fill out the form</p>
     </div>
-    </div>
-    <div  class="row mt-4">
-      <div class="col-sm-8 form-floating">
-      <select  class="form-select" id="adviceDirect" aria-label="adviceDirect">
-        <option  selected>adviceDirect</option>
-        <option  value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-      <span>This question is pre-selected based on your previous input , but you can change it here</span>
-      </div>
-      </div>
- </form>
-
- <div class="row">
- <div class="col-sm-4  pt-3 "> 
-<owl-date-time-inline style="width:100%" [owlDateTimeFilter]="weekendFilter" 
-   [min]="min" [ngModel]="selectedDate" [pickerType]="'calendar'"
- (ngModelChange)="ChangeDate($event , true)" #dt10>
-</owl-date-time-inline>
-</div>  
-<div  class="col-sm-5  pt-5">
-  <div style="width:80%">
- <div class="selectedDate"> {{selectedDate.toLocaleString('default', { month: 'short' })}}
-   {{ ("0" + selectedDate.getDate()).slice(-2)}}</div>
- <div (click)="onSelecteSlot(time)" class="timeSlotsBox" *ngFor="let time of timeSlot" [ngClass]="{'availableSlot': (SelectedDateSlot && SelectedDateSlot.includes(time)) , 
-   'selectedSlot': (selectedTime == time)}">
-   <span class="time">{{time.split(' ')[0]}}<span class="am_pm">{{time.split(' ')[1]}}</span></span>
+    <br>
+  <h2>What would you want to talk about</h2>
+  <form class="mt-4">
+   <div  class="row">
+     <div  class="col-sm-8 form-floating">
+     <select  class="form-select" id="openAccount" aria-label="openAccount">
+       <option  selected>I want to open an account</option>
+       <option  value="1">One</option>
+       <option value="2">Two</option>
+       <option value="3">Three</option>
+     </select>
+     <span>This question is pre-selected based on your previous input , but you can change it here</span>
+     </div>
+     </div>
+     <div  class="row mt-4">
+       <div class="col-sm-8 form-floating">
+       <select  class="form-select" id="adviceDirect" aria-label="adviceDirect">
+         <option  selected>adviceDirect</option>
+         <option  value="1">One</option>
+         <option value="2">Two</option>
+         <option value="3">Three</option>
+       </select>
+       <span>This question is pre-selected based on your previous input , but you can change it here</span>
+       </div>
+       </div>
+  </form>
+ 
+  <div class="row">
+  <div class="col-sm-4  pt-3 "> 
+ <owl-date-time-inline style="width:100%" [owlDateTimeFilter]="weekendFilter" 
+    [min]="min" [ngModel]="selectedDate" [pickerType]="'calendar'"
+  (ngModelChange)="ChangeDate($event , true)" #dt10>
+ </owl-date-time-inline>
+ </div>  
+ <div  class="col-sm-5  pt-5">
+   <div style="width:80%">
+  <div class="selectedDate"> {{selectedDate.toLocaleString('default', { month: 'short' })}}
+    {{ ("0" + selectedDate.getDate()).slice(-2)}}</div>
+  <div (click)="onSelecteSlot(time)" class="timeSlotsBox" *ngFor="let time of timeSlot" [ngClass]="{'availableSlot': (SelectedDateSlot && SelectedDateSlot.includes(time)) , 
+    'selectedSlot': (selectedTime == time)}">
+    <span class="time">{{time.split(' ')[0]}}<span class="am_pm">{{time.split(' ')[1]}}</span></span>
+  </div>
+ </div></div>
  </div>
-</div></div>
-</div>
-
-
-<div>
- <h2>Tell us about yourself</h2>
- <p>*Mandatory fields</p>
-
- <form id="userInfo">
-<div  class="row">
-<div class="col-sm-6  form-floating">
-<input type="text" class="form-control" id="firstName" placeholder="First Name*">
-<label for="firstName">First Name*</label>
-</div>
-<div class="col-sm-6 form-floating">
-<input type="text" class="form-control" id="lastName" placeholder="Last Name*">
-<label for="lastName">Last Name*</label>
-</div>
-</div>
-<div  class="row">
-<div class="col-sm-6  form-floating">
-<input type="email" class="form-control" id="emailAddress" placeholder="Email address*">
-<label for="emailAddress">Email address*</label>
-</div>
-<div class="col-sm-6  form-floating">
-<input type="number" class="form-control" id="phoneNumber" placeholder="Phone number">
-<label for="phoneNumber">Phone number</label>
-<span>We will only phone you incase of technical difficulties</span>
-</div>
-</div>
-<div  class="row">
-<div class="col-sm-6 form-floating">
-<select class="form-select" id="province" aria-label="province">
-  <option  selected>Province*</option>
-  <option  value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-<!-- <label for="province">Province*</label> -->
-</div>
-<div class="col-sm-6 form-floating">
-<select  class="form-select" id="household" aria-label="household">
-  <option  selected>Household investable assets</option>
-  <option  value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-<!-- <label for="household">Household investable assets</label> -->
-</div>
-</div>
-<div class="row">
-<div class="col-sm-6 form-floating">
-<select  class="form-select" id="invest" aria-label="invest">
-  <option  selected>How do you currently invest</option>
-  <option  value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
-<!-- <label for="invest">How do you currently invest</label> -->
-</div>
-<div class="col-sm-6 form-floating">
-<input type="text" class="form-control" id="comments" placeholder="Comments">
-<label for="comments">Comments or questions(optional)</label>
-</div>
-</div>
-<div class="pt-3 text-center">
-<button type="submit" class="btn btn-primary rounded-pill">Book now</button>
-</div>
-</form>
-</div>
-</div>
-
-
-
-
-
-
-
-<!-- <div>date EST : {{testDate | date : "full" : "-4"}}</div>
-<div>date IST : {{testDate | date : "full" : "offsetLocal"}}</div> -->
-
-
-
-
-
-============
-
-
-p {
-  font-family: Lato;
-}
-
-.timeSlotsBox {
-  pointer-events: none;
-  margin: 10px;
-  font-size: 18px;
-  width: 100px;
-  color: grey;
-  display: inline-flex;
-}
-.availableSlot {
-  color: blue;
-  pointer-events: auto;
-  cursor: pointer; 
-}
-.time {
-  margin: 5px 5px 5px 0;
-  position: relative;
-  left: 40%;
-  transform: translate(-50%);
-}
-
-.selectedDate {
-  height: 35px;
-  text-align: center;
-  border-bottom: 1px solid gainsboro;
-}
-.selectedSlot , .availableSlot:hover{
-  background-color: blue;
-  color: white;
-  border-radius: 5px;
-}
-
-.am_pm {
-  font-size: 10px;
-  margin-left: 2px;
-  position: absolute;
-}
-
-
-
-
-
-/* // bootstrap */
-
-input {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid gainsboro;
-  color: blue;
-}
-select{
-     border: none;
-     border-bottom: 1px solid gainsboro;
-    color: blue;
-}
-
-input:focus ,
-select:focus{
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  outline: none;
-  border-bottom: 1px solid gainsboro;
-  color: blue;
-}
-label ,
-select {
-  color: blue;
-}
- #userInfo .row .col-sm-6  {
-  padding: 10px;
-}
-.form-floating>span {
- color: gray;
-}
-/* .form-select {
-  background-image: none;
-} */
+ 
+ 
+ <div>
+  <h2>Tell us about yourself</h2>
+  <p>*Mandatory fields</p>
+ 
+  <form id="userInfo">
+ <div  class="row">
+ <div class="col-sm-6  form-floating">
+ <input type="text" class="form-control" id="firstName" placeholder="First Name*">
+ <label for="firstName">First Name*</label>
+ </div>
+ <div class="col-sm-6 form-floating">
+ <input type="text" class="form-control" id="lastName" placeholder="Last Name*">
+ <label for="lastName">Last Name*</label>
+ </div>
+ </div>
+ <div  class="row">
+ <div class="col-sm-6  form-floating">
+ <input type="email" class="form-control" id="emailAddress" placeholder="Email address*">
+ <label for="emailAddress">Email address*</label>
+ </div>
+ <div class="col-sm-6  form-floating">
+ <input type="number" class="form-control" id="phoneNumber" placeholder="Phone number">
+ <label for="phoneNumber">Phone number</label>
+ <span>We will only phone you incase of technical difficulties</span>
+ </div>
+ </div>
+ <div  class="row">
+ <div class="col-sm-6 form-floating">
+ <select class="form-select" id="province" aria-label="province">
+   <option  selected>Province*</option>
+   <option  value="1">One</option>
+   <option value="2">Two</option>
+   <option value="3">Three</option>
+ </select>
+ <!-- <label for="province">Province*</label> -->
+ </div>
+ <div class="col-sm-6 form-floating">
+ <select  class="form-select" id="household" aria-label="household">
+   <option  selected>Household investable assets</option>
+   <option  value="1">One</option>
+   <option value="2">Two</option>
+   <option value="3">Three</option>
+ </select>
+ <!-- <label for="household">Household investable assets</label> -->
+ </div>
+ </div>
+ <div class="row">
+ <div class="col-sm-6 form-floating">
+ <select  class="form-select" id="invest" aria-label="invest">
+   <option  selected>How do you currently invest</option>
+   <option  value="1">One</option>
+   <option value="2">Two</option>
+   <option value="3">Three</option>
+ </select>
+ <!-- <label for="invest">How do you currently invest</label> -->
+ </div>
+ <div class="col-sm-6 form-floating">
+ <input type="text" class="form-control" id="comments" placeholder="Comments">
+ <label for="comments">Comments or questions(optional)</label>
+ </div>
+ </div>
+ <div class="pt-3 text-center">
+ <button type="submit" class="btn btn-primary rounded-pill">Book now</button>
+ </div>
+ </form>
+ </div>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- <div>date EST : {{testDate | date : "full" : "-4"}}</div>
+ <div>date IST : {{testDate | date : "full" : "offsetLocal"}}</div> -->
+ 
+ 
+ 
+ =================
+ 
+ 
+ 
+ 
