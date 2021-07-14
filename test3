@@ -1,0 +1,65 @@
+.owl-dt-inline-container {
+   box-shadow: none;
+   width: inherit;
+ }
+.owl-dt-calendar-table .owl-dt-calendar-cell {
+  color: blue;
+}
+.owl-dt-calendar-table .owl-dt-calendar-cell-content {
+  border-radius: 5px;
+ }
+ .owl-dt-calendar-table .owl-dt-calendar-cell-selected.owl-dt-calendar-cell-today {
+   box-shadow: none;
+  
+ } 
+ .owl-dt-calendar-table .owl-dt-calendar-cell-today:not(.owl-dt-calendar-cell-selected) {
+  border-color: blue;
+}
+.owl-dt-calendar-table .owl-dt-calendar-cell-selected {
+  color: rgba(255,255,255,.85);
+  background-color: blue;
+}
+
+  .owl-dt-calendar-table .today:not(.owl-dt-calendar-cell-selected)::after  ,
+  .owl-dt-calendar-table .owl-dt-calendar-cell-selected.today::after {
+    content: 'today';
+    position: absolute; 
+    bottom: 0; 
+    text-transform: uppercase;
+    font-size: 9px;
+   }
+ 
+ .owl-dt-control-arrow-button {
+    color: blue; 
+  }
+  
+
+.owl-dt-calendar-table .owl-dt-calendar-cell:not(.owl-dt-calendar-cell-disabled)
+      .owl-dt-calendar-cell-content:not(.owl-dt-calendar-cell-selected):hover  {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 1px solid skyblue  !important;
+  box-shadow :   inset 0 0 3px skyblue;
+}
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+.checkedDate:not(.owl-dt-calendar-cell-selected) {
+  border: 1px solid black  !important;
+}
+/* checkedDate(date) {
+  console.log(date);
+  const label1 = "'[aria-label= ";
+  const label2 =  this.monthNames[this.selectedDate.getMonth()]+' '
+                           +16+', '+this.selectedDate.getFullYear();
+     const label3 = "]'";
+  // let label = label1+'"'+label2+'"'+label3;
+//  '[aria-label= "July 15, 2021"]';
+  // console.log(label);
+  // console.log(`'[aria-label= "July 15, 2021"]'`);
+  let label = `'[aria-label= "July 15, 2021"]'`
+  let elements = this.elem.nativeElement.querySelectorAll(label);
+   elements[0].classList.add("checkedDate");
+  console.log(elements);;
+} */
