@@ -1,0 +1,74 @@
+
+<div class="card mt-5 mt-3">
+    <div class="card-body">
+        <form #agentForm="ngForm" novalidate (ngSubmit)="saveAgent()">  
+
+            <div class="col-sm-12 mt-1 mb-1">
+                <div class="form-check form-switch form-group">
+                    <label class="form-check-label" for="videoCallOnOff">Available for Video call?</label>
+                    <input class="form-check-input" type="checkbox" id="videoCallOnOff" aria-describedby="emailHelp" 
+                     [(ngModel)]="agentModel.video" name="video">
+                </div>
+            </div>
+
+            
+            <div class="col-sm-12 mt-2 mb-1">
+                <div class="form-group sameline">
+                <label for="agentId" class="form-label myLabel">Agent Id</label>
+                <input type="text" class="form-control mytextbox" id="agentName" aria-describedby="agentName" 
+                 [ngClass]="{'invalidForm': invalidName}" [(ngModel)]="agentModel.id" 
+                    name="agentId" [disabled]="disableIdField">
+                <small *ngIf="invalidName">Name is required.</small>
+                </div>
+            </div>
+
+            <div class="col-sm-12 mt-2 mb-1">
+                <div class="form-group sameline">
+                <label for="agentId" class="form-label myLabel">Agent Name</label>
+                <input type="text" class="form-control mytextbox" id="agentId" aria-describedby="agentId" 
+                [(ngModel)]="agentModel.name" name="agentName">
+                </div>
+            </div>
+
+            <div class="col-sm-12 mt-1 mb-1">
+                <div class="form-group sameline">
+                <label for="agentGender" class="myLabel">Gender</label>
+                <select class="form-control mytextbox" id="agentGender" [(ngModel)]="agentModel.gender" name="gender">
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+                </div>
+            </div>
+
+            <div class="col-sm-12 mt-1 mb-1">
+                <div class="form-group sameline">
+                <label for="agentEmail" class="form-label myLabel">Email address</label>
+                <input type="email" class="form-control mytextbox" id="agentEmail" aria-describedby="agentEmail"
+                [(ngModel)]="agentModel.email" name="email">
+                </div>
+            </div>
+
+            <div class="col-sm-12 mt-1 mb-1">
+                <div class="form-group sameline">
+                <label for="agentContactNumber" class="form-label myLabel">Contact Number</label>
+                <input type="text" class="form-control mytextbox" id="agentContactNumber" aria-describedby="emailHelp" 
+                [(ngModel)]="agentModel.contact" name="contact">
+                </div>
+            </div>
+
+            <div class="col-sm-12 mt-1 mb-1">
+                <div class="form-group sameline">
+                <label for="agentSpecilization" class="form-label myLabel">Specialization</label>
+                <input type="text" class="form-control mytextbox" id="agentSpecilization" aria-describedby="agentSpecilization" 
+                [(ngModel)]="agentModel.specialization" name="specilization">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" >Submit</button>
+
+        </form>    
+    </div>
+  </div>
+
+    
+
