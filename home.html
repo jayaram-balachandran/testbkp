@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <button class="btn btn-primary" (click)="moveToAddAgent()">Add Agent</button>
+    <h2>
+        Agent Details
+    </h2>
+    <table class="table">
+        <thead>
+            <th>Agent Id</th>
+            <th>Agent Name</th>
+            <th>Agent Email</th>
+            <th>Agent Specialization</th>
+            <th></th>
+            <th></th>
+        </thead>    
+        <tbody>
+            <tr *ngFor="let agent of agents">
+                <td>{{agent.id}}</td>
+                <td>{{agent.name}}</td>
+                <td>{{agent.email}}</td>
+                <td>{{agent.specialization}}</td>
+                <td><button type="button" class="btn btn-primary" (click)=updateAgent(agent)>Edit</button></td>
+                <td><button type="button" class="btn btn-danger" (click)="deleteAgent(agent.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
