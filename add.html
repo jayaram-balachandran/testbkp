@@ -1,0 +1,113 @@
+<div class="card mt-5 mt-3">
+  <div class="card-body">
+    <form #agentForm="ngForm" novalidate (ngSubmit)="saveAgent()">
+      <div class="col-sm-12 mt-2 mb-1">
+        <div class="form-group sameline">
+          <label for="emailId" class="form-label myLabel">Email Id</label>
+          <input
+            type="text"
+            class="form-control mytextbox"
+            id="emailId"
+            aria-describedby="emailId"
+            [ngClass]="{ invalidForm: invalidName }"
+            [(ngModel)]="adminModel.emailId"
+            name="emailId"
+            [disabled]="disableIdField"
+          />
+        </div>
+      </div>
+
+      <div class="col-sm-12 mt-2 mb-1">
+        <div class="form-group sameline">
+          <label for="firstName" class="form-label myLabel">First Name</label>
+          <input
+            type="text"
+            class="form-control mytextbox"
+            id="firstName"
+            aria-describedby="firstName"
+            [(ngModel)]="adminModel.firstName"
+            name="firstName"
+          />
+        </div>
+      </div>
+
+      <div class="col-sm-12 mt-2 mb-1">
+        <div class="form-group sameline">
+          <label for="lastName" class="form-label myLabel">Last Name</label>
+          <input
+            type="text"
+            class="form-control mytextbox"
+            id="lastName"
+            aria-describedby="lastName"
+            [(ngModel)]="adminModel.lastName"
+            name="lastName"
+          />
+        </div>
+      </div>
+
+      <div class="col-sm-12 mt-1 mb-1">
+        <div class="form-group sameline">
+          <label for="language" class="myLabel">language</label>
+          <select
+            class="form-control mytextbox"
+            id="language"
+            [value]="adminModel.language"
+            [(ngModel)]="adminModel.language"
+            name="language"
+          >
+            <option value="En">En</option>
+            <option value="Fr">Fr</option>
+            <option value="En & Fr">En & Fr</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-sm-12 mt-1 mb-1">
+        <div class="form-group sameline">
+          <label for="province" class="myLabel">province</label>
+          <select
+            class="form-control mytextbox"
+            id="province"
+            [(ngModel)]="adminModel.province"
+            name="province"
+          >
+            <option>P1</option>
+            <option>P2</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-sm-12 mt-1 mb-1">
+        <div class="form-group sameline">
+          <label for="group" class="myLabel">group</label>
+          <select
+            class="form-control mytextbox"
+            id="group"
+            [(ngModel)]="adminModel.group"
+            name="group"
+          >
+            <option>G1</option>
+            <option>G2</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-sm-12 mt-1 mb-1">
+        <div class="form-group sameline">
+          <label for="status" class="myLabel">status</label>
+          <select
+            class="form-control mytextbox"
+            id="status"
+            [(ngModel)]="adminModel.status"
+            name="status"
+          >
+            <option>Ac</option>
+            <option>In-Ac</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
